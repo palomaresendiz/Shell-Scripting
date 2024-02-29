@@ -1,10 +1,4 @@
-# NAME : Paloma Resendiz
-# CS 4350 – Unix Systems Programming 
-# Section Number : 001
-# Assignment Number : 2
-# Due Date : 9 / 18 / 2023 no later than 5:15 pm
-
-echo "This Script is Designed and Implemented by Paloma Resendiz 
+echo "This Script is Designed and Implemented by Paloma Resendiz
 
 The function of This script is to :
 
@@ -27,33 +21,32 @@ argument.
 prime number.
 14. Calculating Distinct Sequence of the second integer"
 
+echo ""
+
 read -p "Enter 3 integer Values - - - - > " num1 num2 num3
 
 echo ""
 echo "1) You Entered   $num1  $num2  $num3"
 
-echo -n "2)"
 if [ $num1 -lt $num2 ] && [ $num1 -lt $num3 ]
 then
-	echo -n " The smallest integer is $num1"
+	echo "2) The smallest integer is $num1"
 elif [ $num2 -lt $num1 ] && [ $num2 -lt $num3 ]
 then
-	echo -n " The smallest integer is $num2"
+	echo "2) The smallest integer is $num2"
 else
-	echo -n " The smallest integer is $num3"
-fi 
-echo " "
-echo -n "3)"
+	echo "2) The smallest integer is $num3"
+fi
+
 if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
 then
-	echo -n " The largest integer is $num1"
+	echo "3) The largest integer is $num1"
 elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
 then
-	echo -n " The largest integer is $num2"
+	echo "3) The largest integer is $num2"
 else
-	echo -n " The largest integer is $num3"
+	echo "3) The largest integer is $num3"
 fi
-echo " "
 
 sum=$((num1+num2+num3))
 echo "4) $num1 + $num2 + $num3 = $sum"
@@ -70,75 +63,71 @@ square3=$((num3*num3))
 
 echo "7) $num1 * $num1 = $square1, $num2 * $num2 = $square2, $num3 * $num3 = $square3"
 
-echo -n "8) "
+echo "8) "
 if [ $num1 -gt 0 ]
 then
-	echo -n "$num1 is positive, "
+	echo "    $num1 is positive, "
 else
-	echo -n "$num1 is negative, "
+	echo "    $num1 is negative, "
 fi
 if [ $num2 -gt 0 ]
 then
-        echo -n "$num2 is positive, "
+        echo "    $num2 is positive, "
 else
-        echo -n "$num2 is negative, "
+        echo "    $num2 is negative, "
 fi
 if [ $num3 -gt 0 ]
 then
-        echo "$num3 is positive"
+        echo "    $num3 is positive"
 else
-        echo "$num3 is negative"
+        echo "    $num3 is negative"
 fi
 
-echo -n "9) "
+echo "9) "
 if [ $((num1 % 2)) =  0 ]
 then
-        echo -n "$num1 is even, "
+        echo "    $num1 is even, "
 else
-        echo -n "$num1 is odd, "
+        echo "    $num1 is odd, "
 fi
 if [ $((num2 % 2)) = 0 ]
 then
-        echo -n "$num2 is even, "
+        echo "    $num2 is even, "
 else
-        echo -n "$num2 is odd, "
+        echo "    $num2 is odd, "
 fi
 if [ $((num3 % 2)) = 0 ]
 then
-        echo "$num3 is even"
+        echo "    $num3 is even"
 else
-        echo "$num3 is odd"
+        echo "    $num3 is odd"
 fi
 
-echo -n "10) All even numbers between 1 and $num1 are: "
+echo "10) All even numbers between 1 and $num1 are: "
 for i in $(seq 0 $num1)
 do
 	if [ $(expr $i % 2) = 0 ]
 	then
-		echo -n "$i, "
+		echo "    $i, "
 	fi
 done
-echo ""
 
-echo -n "11) All odd numbers between 1 and $num3 are: "
+echo "11) All odd numbers between 1 and $num3 are: "
 for i in $(seq 0 $num3)
 do
         if [ $(expr $i % 2) = 1 ]
         then
-                echo -n "$i, "
+                echo "    $i, "
         fi
 done
-echo ""
 
-echo -n "12) Factorial of $num3 is: "
 factorial=1
 for ((i=2; i<=num3;i++))
 do
 	factorial=$((factorial*$i))
 done
-echo $factorial
+echo "12) Factorial of $num3 is: $factorial"
 	
-echo -n "13) $num2 is "
 i=2
 f=0
 while [ $i -le $((num2 / 2)) ]
@@ -151,16 +140,16 @@ do
 done
 if [ $f -eq 1 ]
 then
-	echo "not prime"
+	echo "13) $num2 is not prime"
 else
-	echo "prime"
+	echo "13) $num2 is prime"
 fi
 
-echo -n "14) Distinct sequence for the integer $num2 is: "
+echo "14) Distinct sequence for the integer $num2 is: "
 seq=$num2
 while [ $seq != 1 ]
 do
-	echo -n "$seq, "
+	echo "    $seq, "
 	if [ $((seq % 2)) = 0 ]
 	then
 		seq=$((seq/2))
@@ -168,8 +157,7 @@ do
 		seq=$((seq*3+1))
 	fi
 done
-echo -n $seq
-echo ""
+echo "    $seq"
 
 echo""
 echo "End of script"
